@@ -1,0 +1,6 @@
+framework module Pods_Celdas_Personalizadas {
+  umbrella header "Pods-Celdas_Personalizadas-umbrella.h"
+
+  export *
+  module * { export * }
+}

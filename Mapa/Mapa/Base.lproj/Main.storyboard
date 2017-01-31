@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Jmq-jB-aDy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mapa-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mapa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X9Q-Ek-Wbd">
+                                <rect key="frame" x="20" y="552" width="560" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="9hm-js-aWb"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Mapa"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Terreno"/>
+                                </segments>
+                                <connections>
+                                    <action selector="typeAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="yFa-Xr-xdG"/>
+                                </connections>
+                            </segmentedControl>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="TMx-T2-k3Z">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X9Q-Ek-Wbd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="0qA-C9-rMB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TMx-T2-k3Z" secondAttribute="bottom" id="AIA-tv-YNA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X9Q-Ek-Wbd" secondAttribute="bottom" constant="20" id="GZO-9b-lfV"/>
+                            <constraint firstItem="TMx-T2-k3Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IQK-Pc-0KU"/>
+                            <constraint firstItem="TMx-T2-k3Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aIM-Q8-wO4"/>
+                            <constraint firstItem="X9Q-Ek-Wbd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dGq-x3-Gef"/>
+                            <constraint firstAttribute="trailing" secondItem="TMx-T2-k3Z" secondAttribute="trailing" id="fmf-jI-bAG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mapa" id="LjW-lC-N9G">
+                        <barButtonItem key="rightBarButtonItem" title="Facebook" id="a0f-Oj-Mac">
+                            <connections>
+                                <segue destination="yoq-MV-Bub" kind="show" id="JPr-eI-zdv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="TMx-T2-k3Z" id="VLy-Jm-6Tn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1408" y="467"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Tw2-0j-u4S">
+            <objects>
+                <viewController id="yoq-MV-Bub" customClass="WebViewController" customModule="Mapa" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4j-Gh-ZuB"/>
+                        <viewControllerLayoutGuide type="bottom" id="kjC-5h-d9c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xyx-0K-xka">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1M5-I3-lIg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXX-qP-mU6">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3ib-jx-jxB"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="9Wr-Tj-JEr"/>
+                                    <barButtonItem systemItem="fastForward" id="5fD-1k-KST"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1M5-I3-lIg" secondAttribute="trailing" id="7gm-Fg-Db7"/>
+                            <constraint firstItem="TXX-qP-mU6" firstAttribute="leading" secondItem="xyx-0K-xka" secondAttribute="leading" id="IgO-Tf-csi"/>
+                            <constraint firstAttribute="trailing" secondItem="TXX-qP-mU6" secondAttribute="trailing" id="WKL-UM-9L5"/>
+                            <constraint firstItem="kjC-5h-d9c" firstAttribute="top" secondItem="TXX-qP-mU6" secondAttribute="bottom" id="Z65-DA-IrU"/>
+                            <constraint firstItem="1M5-I3-lIg" firstAttribute="top" secondItem="xyx-0K-xka" secondAttribute="top" id="dEx-AZ-CqE"/>
+                            <constraint firstItem="kjC-5h-d9c" firstAttribute="top" secondItem="1M5-I3-lIg" secondAttribute="bottom" id="gsR-1F-S6Y"/>
+                            <constraint firstItem="1M5-I3-lIg" firstAttribute="leading" secondItem="xyx-0K-xka" secondAttribute="leading" id="pho-FO-bYa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="1M5-I3-lIg" id="f57-2J-pZc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ttx-mM-eus" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2095" y="467"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sTE-Pi-sJd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jmq-jB-aDy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wzj-XK-Req">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sA6-qj-nbR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0R-a7-4Ow" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596" y="467"/>
+        </scene>
+    </scenes>
+</document>
